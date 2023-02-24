@@ -1,10 +1,7 @@
 import React, { Component } from "react";
+import Form from "./components/form";
 import Modal from "./components/Modal";
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Slider from '@mui/material/Slider';
-
+import Sliders from "./components/sliders";
 import axios from "axios";
 
 class App extends Component {
@@ -163,8 +160,8 @@ class App extends Component {
                 <h2 className="text-black text-small text-left" style={{ fontFamily: 'Arial', fontSize: '24px', }}>Change the Number of Images </h2>
               </div>
               <div>
-                <Slider
-                  aria-label="Temperature"
+                {/* <Slider
+                  aria-label="NumOfImg"
                   defaultValue={30000}
                   getAriaValueText={this.valuetext}
                   valueLabelDisplay="auto"
@@ -172,7 +169,8 @@ class App extends Component {
                   marks
                   min={10000}
                   max={100000}
-                />
+                /> */}
+                <Sliders />
               </div>
             </div>
           </div>
@@ -182,16 +180,7 @@ class App extends Component {
             <div className="card p-3">
               <div className="mb-4">
                 <h2 className="text-black text-small text-left" style={{ fontFamily: 'Arial', fontSize: '24px', }}>Change the Dataset </h2>
-
-                <RadioGroup
-                  aria-labelledby="demo-radio-buttons-group-label"
-                  defaultValue="ds1"
-                  name="radio-buttons-group"
-                >
-                  <FormControlLabel value="ds1" control={<Radio />} label="Dataset 1" />
-                  <FormControlLabel value="ds2" control={<Radio />} label="Dataset 2" />
-                  <FormControlLabel value="ds3" control={<Radio />} label="Dataset 3" />
-                </RadioGroup>
+                <Form />
               </div>
             </div>
           </div>
